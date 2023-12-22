@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/ar"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+<TextView
+    android:textSize="30dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:textColor="@color/red"
+    android:id="@+id/textViewNom"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Nom complet :"/>
+
+<EditText
+    android:id="@+id/editTextNom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewNom"
+    android:inputType="text"
+    android:textStyle="bold"
+    android:minHeight="48dp"
+    tools:ignore="SpeakableTextPresentCheck" />
+
+<TextView
+    android:id="@+id/textViewTelephone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/editTextNom"
+    android:textColor="@color/red"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:text="Numéro de téléphone :"/>
+
+<EditText
+    android:id="@+id/editTextTelephone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewTelephone"
+    android:inputType="phone"
+    android:textColor="@color/red"
+    android:textStyle="bold"
+    android:minHeight="48dp"
+    tools:ignore="SpeakableTextPresentCheck" />
+
+<TextView
+    android:id="@+id/textViewAdresse"
+    android:layout_width="match_parent"
+    android:textColor="@color/red"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/editTextTelephone"
+    android:text="Adresse :"/>
+
+<EditText
+    android:id="@+id/editTextAdresse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewAdresse"
+    android:inputType="text"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+
+    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+<TextView
+    android:id="@+id/textViewTypeCours"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/editTextAdresse"
+    android:textColor="@color/red"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:text="Type de Cours :"/>
+
+<Spinner
+    android:id="@+id/spinnerTypeCours"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/red"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:layout_below="@id/textViewTypeCours"
+    android:entries="@array/types_cours"
+    android:minHeight="48dp" />
+
+<!-- Date et heure spécifiques au type de cours -->
+<TextView
+    android:textSize="25dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:id="@+id/textViewDateHeure"
+    android:layout_width="match_parent"
+    android:textColor="@color/red"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/spinnerTypeCours"
+    android:text="Date et Heure :"/>
+
+<Spinner
+    android:id="@+id/spinnerDateHeure"
+    android:layout_width="match_parent"
+    android:textColor="@color/red"
+    android:entries="@array/dates_danse"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewDateHeure"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:minHeight="58dp" />
+
+<!-- Type d'abonnement -->
+<TextView
+    android:id="@+id/textViewTypeAbonnement"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/red"
+    android:textSize="25dp"
+    android:textStyle="bold"
+    app:fontFamily="cursive"
+    android:layout_below="@id/spinnerDateHeure"
+    android:text="Type d'abonnement :"/>
+
+<RadioGroup
+    android:id="@+id/radioGroupAbonnement"
+    android:layout_width="match_parent"
+    android:textColor="@color/black"
+
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textViewTypeAbonnement">
+
+    <RadioButton
+        android:id="@+id/radioButtonParSeance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Par séance"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <RadioButton
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/radioButtonParMois"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Par mois"/>
+
+    <RadioButton
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/radioButtonParAn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Par an"/>
+</RadioGroup>
+
+<!-- Bouton de réservation -->
+
+
+    <Button
+        android:id="@+id/buttonReserver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroupAbonnement"
+        android:layout_alignEnd="@+id/radioGroupAbonnement"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="101dp"
+        android:text="Réserver" />
+
+    <ProgressBar
+    android:id="@+id/progressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:visibility="invisible" />
+
+</RelativeLayout>
